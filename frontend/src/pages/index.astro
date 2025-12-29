@@ -1,0 +1,46 @@
+---
+import Welcome from '../components/astro/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+import VueWelcome from '../components/vue/VueWelcome.vue';
+import ReactWelcome from '../components/react/ReactWelcome.jsx';
+import AngularWelcome from '../components/angular/welcome.component';
+import SvelteWelcome from '../components/svelte/SvelteWelcome.svelte';
+---
+
+<Layout title="SMS Platform - Home">
+	<main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
+		<div class="max-w-7xl mx-auto">
+			<header class="text-center mb-12">
+				<h1 class="text-5xl font-bold text-gray-900 mb-4">
+					\ud83d\udcf1 SMS Platform
+				</h1>
+				<p class="text-xl text-gray-600 mb-8">
+					Modern Messaging Solution for Your Business
+				</p>
+			</header>
+
+			<div class="grid gap-8">
+				<!-- Vue Component -->
+				<section class="bg-white rounded-lg shadow-lg p-8">
+					<VueWelcome/>
+				</section>
+
+				<!-- React Component -->
+				<section class="bg-white rounded-lg shadow-lg p-8">
+					<ReactWelcome client:only="react" />
+				</section>
+
+				<!-- Angular Component -->
+				<section class="bg-white rounded-lg shadow-lg p-8">
+					<AngularWelcome client:load />
+				</section>
+
+				<!-- Svelte Component -->
+				<section class="bg-white rounded-lg shadow-lg p-8">
+					<SvelteWelcome />
+				</section>
+			</div>
+		</div>
+	</main>
+</Layout>

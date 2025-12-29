@@ -1,0 +1,90 @@
+---
+// SMS Platform - Features Component
+const features = [
+  {
+    icon: '📤',
+    title: 'Quick Send',
+    description: 'Send SMS messages instantly',
+    color: 'from-green-400 to-emerald-600'
+  },
+  {
+    icon: '👥',
+    title: 'Contact Management',
+    description: 'Organize your contacts',
+    color: 'from-blue-400 to-indigo-600'
+  },
+  {
+    icon: '📊',
+    title: 'Analytics',
+    description: 'Track delivery and engagement',
+    color: 'from-red-400 to-pink-600'
+  },
+  {
+    icon: '📅',
+    title: 'Scheduling',
+    description: 'Schedule messages ahead of time',
+    color: 'from-orange-400 to-red-600'
+  }
+];
+---
+
+<section class="features-section">
+  <div class="features-grid">
+    {features.map(feature => (
+      <div class="feature-card">
+        <div class={`feature-icon bg-gradient-to-br ${feature.color}`}>
+          <span>{feature.icon}</span>
+        </div>
+        <h3>{feature.title}</h3>
+        <p>{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features-section {
+    margin: 3rem 0;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+</style>

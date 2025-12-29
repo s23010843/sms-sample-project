@@ -1,0 +1,13 @@
+<div class="rate-limit-card">
+  <h4>API Rate Limit</h4>
+  <div class="rate-info">
+    <span class="remaining">{{rateLimitInfo.remaining}}</span>
+    <span class="separator">/</span>
+    <span class="total">{{rateLimitInfo.total}}</span>
+    <span class="label">messages remaining</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" [style.width.%]="percentageUsed"></div>
+  </div>
+  <p class="reset-time">Resets in {{rateLimitInfo.resetTime}}</p>
+</div>
